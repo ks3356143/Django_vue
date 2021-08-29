@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'center',
     'projects',
     'corsheaders',
+    'computer',
 ]
 
 MIDDLEWARE = [
@@ -128,7 +129,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 REST_FRAMEWORK = {
     # 指定用于支持coreapi的Schema
     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
-    'DEFAULT_AUTHENTICATION_CLASS':['rest_framework.authentication.TokenAuthentication']
+    'DEFAULT_AUTHENTICATION_CLASS':['rest_framework.authentication.TokenAuthentication'],
+    'DEFAULT_PERMISSION_CLASSES':{
+        'rest_framework.permission.DjangoModelPermissions',
+    }
 }
 
 CORS_ORIGIN_ALLOW_ALL = True
