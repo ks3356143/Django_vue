@@ -8,6 +8,7 @@
     >
       获得Projects数据
     </button>
+    <a-button type="primary">Button</a-button>
     <a
       v-if="this.$store.state.token"
       @click="logout"
